@@ -1,11 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
   <TextView
+      android:id="@+id/statistics_tv_date"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text="statistics"/>
+      android:layout_marginTop="100dp"
+      android:layout_marginLeft="50dp"
+      android:layout_marginRight="30dp"
+      android:text="选择日期"
+      android:textSize="20sp"
+      android:textColor="#000"/>
 
-</LinearLayout>
+  <TextView
+      android:id="@+id/statistics_date"
+      android:layout_width="match_parent"
+      android:layout_height="28sp"
+      android:layout_marginTop="100dp"
+      android:layout_marginRight="50dp"
+      android:gravity="center"
+      android:layout_toRightOf="@+id/statistics_tv_date"
+      android:background="#79D3C4C4"
+      android:textSize="20sp"
+      android:textColor="#000"/>
+
+  <TextView
+      android:id="@+id/statistics_tv_outgoing"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/statistics_tv_date"
+      android:layout_marginTop="50dp"
+      android:layout_marginLeft="70dp"
+      android:text="支出"
+      android:textSize="19sp"/>
+
+  <TextView
+      android:id="@+id/statistics_outgoing"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_toRightOf="@+id/statistics_tv_outgoing"
+      android:layout_below="@+id/statistics_tv_date"
+      android:layout_marginTop="50dp"
+      android:layout_marginLeft="30dp"
+      android:textSize="19sp"
+      android:textColor="#000"/>
+
+  <TextView
+      android:id="@+id/statistics_tv_incoming"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/statistics_tv_outgoing"
+      android:layout_marginTop="30dp"
+      android:layout_marginLeft="70dp"
+      android:text="收入"
+      android:textSize="19sp"/>
+
+  <TextView
+      android:id="@+id/statistics_incoming"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_toRightOf="@+id/statistics_tv_incoming"
+      android:layout_below="@+id/statistics_tv_outgoing"
+      android:layout_marginTop="30dp"
+      android:layout_marginLeft="30dp"
+      android:textSize="19sp"
+      android:textColor="#CB5E5A"/>
+
+
+</RelativeLayout>
