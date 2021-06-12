@@ -1,11 +1,15 @@
 package com.example.financial_assistant;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.app.DatePickerDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -53,9 +57,21 @@ public class MainActivity extends AppCompatActivity{
         return true;
       }
     });
-
   }
 
+  static class MyHelper extends SQLiteOpenHelper {
+    public MyHelper(@Nullable Context context) {
+      super(context, "fa.db", null, 1);
+    }
 
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+      db.execSQL("CREATE TABLE information(title VARCHAR(50) PRIMARY KEY,type VARCHAR(20),content VARCHAR(255),count DOUBLE,date VARCHAR(20))");
+    }
 
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+
+    }
+  }
 }

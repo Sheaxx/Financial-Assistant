@@ -17,10 +17,12 @@ import androidx.fragment.app.Fragment;
 
 public class StatisticsFragment extends Fragment implements DatePicker.OnDateChangedListener {
   private TextView tvDate;
+  private double outgoing, incoming;
 
   private int year, month, day;
   private StringBuffer date = new StringBuffer();
   private Context context;
+  MainActivity.MyHelper myHelper;
 
   @Nullable
   @Override
